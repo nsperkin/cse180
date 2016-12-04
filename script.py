@@ -24,4 +24,8 @@ def pipeline():
     os.system(args.freebayes_path + " -f " + args.file[0] + " output.bam > output.vcf")
     os.system("java -jar " + args.snpEff_path + " " + args.file[2] + " output.vcf > output.ann.vcf")
 
+    if(os.path.exists("./intermediate_files")):
+        os.system("rm -rf intermediate_files")
+    os.system("mkdir intermediate_files && mv *.amb *.ann *.bwt *.fai *.pac *.sa *.bam *.sam *.vcf intermediate_files")
+
 pipeline()
