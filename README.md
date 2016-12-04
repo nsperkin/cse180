@@ -4,7 +4,7 @@ A variant calling pipeline, requires bwa, samtools, freebayes, and snpEff
 
 bwa index > bwa mem > samtools > freebayes > snpEff
 
-Usage: python3 script.py <ref.fa> <infile.fq> <snpEff genome>
+Usage: python3 script.py ref.fa infile.fq snpEff_genome
 
 	--bwa_path: path to bwa
 	--samtools_path: path to samtools
